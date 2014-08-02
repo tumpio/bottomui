@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <setting type="radio"
+             pref="extensions.bottomui.menubarTop"
+             title="Menu Bar At Top"
+             desc="Show menu bar at top. Default at top auto hidden, toggle with ALT-key.">
+        <radiogroup>
+            <radio value="2" label="Autohide" />
+            <radio value="1" label="On" />
+            <radio value="0" label="Off" />
+        </radiogroup>
+    </setting>
+    <setting type="menulist"
+             pref="extensions.bottomui.windowButtonsLocation"
+             title="Custom Window Control Buttons"
+             desc="Use custom min/max/close window control buttons in selected location.">
+        <menulist>
+            <menupopup>
+                <menuitem value="" label="Disabled" />
+                <menuitem value="nav-bar" label="Navigation Toolbar" />
+                <menuitem value="TabsToolbar" label="Tabs Toolbar" />
+            </menupopup>
+        </menulist>
+    </setting>
+</vbox>

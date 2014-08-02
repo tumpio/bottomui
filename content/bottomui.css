@@ -1,0 +1,95 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@-moz-document url(chrome://browser/content/browser.xul) {
+    #TabsToolbar,
+    #TabsToolbar .tab-content,
+    #TabsToolbar .toolbarbutton-1,
+    #TabsToolbar #appmenu-button-container,
+    #TabsToolbar #appmenu-toolbar-button,
+    #TabsToolbar #window-controls toolbarbutton,
+    #TabsToolbar #window-controls-bui toolbarbutton {
+        -moz-transform: scaleY(-1) !important;
+    }
+    #navigator-toolbox toolbar:not(#nav-bar):not(#TabsToolbar) {
+        -moz-box-ordinal-group: 1 !important;
+    }
+    #nav-bar {
+        -moz-box-ordinal-group: 2 !important;
+    }
+    #TabsToolbar {
+        -moz-box-ordinal-group: 3 !important;
+    }
+    #TabsToolbar[tabsontop="true"] {
+        -moz-box-ordinal-group: 1 !important;
+    }
+    #navigator-toolbox {
+        -moz-box-ordinal-group: 4 !important;
+    }
+    #fullscr-toggler {
+        -moz-box-ordinal-group: 2 !important;
+    }
+    #toolbar-menubar {
+        -moz-box-ordinal-group: 0 !important;
+    }
+    notificationbox:not([dir="reverse"]) .notificationbox-stack {
+        -moz-box-ordinal-group: 2 !important;
+    }
+    notificationbox:not([dir="reverse"]) .outset {
+        border-bottom: none !important;
+        border-top: 1px solid threedshadow !important;
+    }
+    #main-window[tabsintitlebar="true"][sizemode="maximized"][chromemargin="0,2,2,2"][buiMenubar="false"] {
+        -moz-appearance: menubar !important;
+        margin-top: -2px !important;
+    }
+    #main-window[tabsintitlebar="true"][sizemode="maximized"][chromemargin="0,2,2,2"][buiMenubar="false"] #titlebar-buttonbox-container {
+        display: none !important;
+    }
+    #main-window[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top:"] {
+        visibility: hidden!important;
+    }
+    #toolbar-menubar:not([moz-collapsed=true]):not([autohide=true]) ~ #TabsToolbar,
+    #toolbar-menubar:not([moz-collapsed=true])[autohide=true]:not([inactive]) ~ #TabsToolbar {
+        margin-top: 0 !important;
+    }
+    #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen])[chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
+    #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen]) #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
+        margin-top: 0 !important;
+    }
+    #main-window[sizemode="normal"] #browser-bottombox {
+        border: none !important;
+    }
+    #main-window[sizemode="normal"] #titlebar,
+    #main-window[sizemode="normal"] #titlebar-content {
+        margin-bottom: 0!important;
+    }
+    #main-window[sizemode="fullscreen"] #window-controls-bui {
+        display: none !important;
+    }
+    #nav-bar #window-controls-bui {
+        -moz-box-align: start;
+    }
+    #TabsToolbar #window-controls-bui {
+        -moz-box-align: end;
+    }
+    #titlebar-placeholder-on-TabsToolbar-for-captions-buttons {
+        display: none!important;
+    }
+    /* fx < 29 */
+    #main-window[chromemargin^="0,"][sizemode=normal] #navigator-toolbox {
+        margin-top: 0!important;
+    }
+    #toolbar-menubar[autohide="true"] + #navigator-toolbox .titlebar-placeholder[type="appmenu-button"] {
+        display: inherit!important;
+    }
+    #toolbar-menubar[autohide="true"] ~ #TabsToolbar .titlebar-placeholder[type="appmenu-button"] {
+        display: inherit!important;
+    }
+    .titlebar-placeholder[type="appmenu-button"] {
+        margin-left: 0!important;
+    }
+    /* linux */
+    #navigator-toolbox > #TabsToolbar:not(:-moz-lwtheme) {
+        -moz-appearance: none!important;
+        border-style: none!important;
+    }
+}
