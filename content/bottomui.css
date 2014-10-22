@@ -1,12 +1,6 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @-moz-document url(chrome://browser/content/browser.xul) {
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar),
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) .tab-content,
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) .toolbarbutton-1,
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #appmenu-button-container,
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #appmenu-toolbar-button,
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #window-controls toolbarbutton,
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #window-controls-bui toolbarbutton {
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) .tab-background {
         -moz-transform: scaleY(-1) !important;
     }
     #navigator-toolbox toolbar:not(#nav-bar):not(#TabsToolbar) {
