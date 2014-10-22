@@ -1,12 +1,12 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @-moz-document url(chrome://browser/content/browser.xul) {
-    #TabsToolbar,
-    #TabsToolbar .tab-content,
-    #TabsToolbar .toolbarbutton-1,
-    #TabsToolbar #appmenu-button-container,
-    #TabsToolbar #appmenu-toolbar-button,
-    #TabsToolbar #window-controls toolbarbutton,
-    #TabsToolbar #window-controls-bui toolbarbutton {
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar),
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) .tab-content,
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) .toolbarbutton-1,
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #appmenu-button-container,
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #appmenu-toolbar-button,
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #window-controls toolbarbutton,
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #window-controls-bui toolbarbutton {
         -moz-transform: scaleY(-1) !important;
     }
     #navigator-toolbox toolbar:not(#nav-bar):not(#TabsToolbar) {
@@ -15,10 +15,10 @@
     #nav-bar {
         -moz-box-ordinal-group: 2 !important;
     }
-    #TabsToolbar {
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) {
         -moz-box-ordinal-group: 3 !important;
     }
-    #TabsToolbar[tabsontop="true"] {
+    #TabsToolbar[tabsontop="true"]:not(.treestyletab-tabbar-toolbar) {
         -moz-box-ordinal-group: 1 !important;
     }
     #navigator-toolbox {
@@ -44,15 +44,15 @@
     #main-window[tabsintitlebar="true"][sizemode="maximized"][chromemargin="0,2,2,2"][buiMenubar="false"] #titlebar-buttonbox-container {
         display: none !important;
     }
-    #main-window[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top:"] {
+    #main-window[sizemode="fullscreen"]:not([treestyletab-mode]) #navigator-toolbox[style*="margin-top:"] {
         visibility: hidden!important;
     }
-    #toolbar-menubar:not([moz-collapsed=true]):not([autohide=true]) ~ #TabsToolbar,
-    #toolbar-menubar:not([moz-collapsed=true])[autohide=true]:not([inactive]) ~ #TabsToolbar {
+    #toolbar-menubar:not([moz-collapsed=true]):not([autohide=true]) ~ #TabsToolbar:not(.treestyletab-tabbar-toolbar),
+    #toolbar-menubar:not([moz-collapsed=true])[autohide=true]:not([inactive]) ~ #TabsToolbar:not(.treestyletab-tabbar-toolbar) {
         margin-top: 0 !important;
     }
-    #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen])[chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
-    #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen]) #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
+    #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen])[chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar:not(.treestyletab-tabbar-toolbar),
+    #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen]) #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar:not(.treestyletab-tabbar-toolbar) {
         margin-top: 0 !important;
     }
     #main-window[sizemode="normal"] #browser-bottombox {
@@ -68,7 +68,7 @@
     #nav-bar #window-controls-bui {
         -moz-box-align: start;
     }
-    #TabsToolbar #window-controls-bui {
+    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #window-controls-bui {
         -moz-box-align: end;
     }
     #titlebar-placeholder-on-TabsToolbar-for-captions-buttons {
@@ -81,14 +81,14 @@
     #toolbar-menubar[autohide="true"] + #navigator-toolbox .titlebar-placeholder[type="appmenu-button"] {
         display: inherit!important;
     }
-    #toolbar-menubar[autohide="true"] ~ #TabsToolbar .titlebar-placeholder[type="appmenu-button"] {
+    #toolbar-menubar[autohide="true"] ~ #TabsToolbar:not(.treestyletab-tabbar-toolbar) .titlebar-placeholder[type="appmenu-button"] {
         display: inherit!important;
     }
     .titlebar-placeholder[type="appmenu-button"] {
         margin-left: 0!important;
     }
     /* linux */
-    #navigator-toolbox > #TabsToolbar:not(:-moz-lwtheme) {
+    #navigator-toolbox > #TabsToolbar:not(:-moz-lwtheme):not(.treestyletab-tabbar-toolbar) {
         -moz-appearance: none!important;
         border-style: none!important;
     }
