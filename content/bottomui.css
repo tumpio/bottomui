@@ -86,4 +86,8 @@
         -moz-appearance: none!important;
         border-style: none!important;
     }
+    /* vimperator fix */
+    .liberator-floatbox{
+        z-index: 2;
+    }
 }
