@@ -38,8 +38,11 @@
     #main-window[tabsintitlebar="true"][sizemode="maximized"][chromemargin="0,2,2,2"][buiMenubar="false"] #titlebar-buttonbox-container {
         display: none !important;
     }
-    #main-window[sizemode="fullscreen"]:not([treestyletab-mode]) #navigator-toolbox[style*="margin-top:"] {
+    #main-window[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top:"] {
         visibility: hidden!important;
+    }
+    #main-window[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top:"] .treestyletab-tabbar-toolbar {
+        visibility: visible!important;
     }
     #toolbar-menubar:not([moz-collapsed=true]):not([autohide=true]) ~ #TabsToolbar:not(.treestyletab-tabbar-toolbar),
     #toolbar-menubar:not([moz-collapsed=true])[autohide=true]:not([inactive]) ~ #TabsToolbar:not(.treestyletab-tabbar-toolbar) {
