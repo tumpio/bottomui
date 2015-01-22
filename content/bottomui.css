@@ -39,7 +39,7 @@
         display: none !important;
     }
     #main-window[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top:"] {
-        visibility: hidden!important;
+        visibility: collapse!important;
     }
     #main-window[sizemode="fullscreen"] #navigator-toolbox[style*="margin-top:"] .treestyletab-tabbar-toolbar {
         visibility: visible!important;
