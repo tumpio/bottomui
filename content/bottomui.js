@@ -24,8 +24,8 @@ function BUI() {
         "chrome://bottomui/content/defaultprefs.js",
         function (branch, name) {
             switch (name) {
-            case "menubarTop":
-                forAllWindows(fMenuBarAtTop);
+            case "menubarLocation":
+                forAllWindows(fMenubarLocation);
                 break;
             case "windowButtonsLocation":
                 forAllWindows(fCustomWinButtons);
@@ -42,12 +42,12 @@ function BUI() {
         }
     }
 
-    function fMenuBarAtTop(window, opt) {
+    function fMenubarLocation(window, opt) {
         let mwin = window.document.getElementById("main-window");
         if (!mwin) return;
 
         let option = (typeof opt !== 'undefined') ? opt : prefmanager.getPref(
-            "menubarTop");
+            "menubarLocation");
         let bpanel = window.document.getElementById("browser-panel");
         let mbar = window.document.getElementById("toolbar-menubar");
         let ntoolbox = window.document.getElementById("navigator-toolbox");
@@ -137,7 +137,7 @@ function BUI() {
 
     function loadIntoWindow(window) {
         if (!window) return;
-        fMenuBarAtTop(window);
+        fMenubarLocation(window);
         fCustomWinButtons(window);
         if (NOT_AUSTRALIS) {
             fLegacyMenuButton(window, 1);
@@ -148,7 +148,7 @@ function BUI() {
     function unloadFromWindow(window) {
         if (!window) return;
         let mwin = window.document.getElementById("main-window");
-        fMenuBarAtTop(window, 0);
+        fMenubarLocation(window, 0);
         fCustomWinButtons(window, null);
         if (NOT_AUSTRALIS) {
             fLegacyMenuButton(window, 0);

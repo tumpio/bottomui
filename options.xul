@@ -1,15 +1,17 @@
 <?xml version="1.0" ?>
 
 <vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-    <setting type="radio"
-             pref="extensions.bottomui.menubarTop"
-             title="Menu Bar At Top"
-             desc="Show menu bar at top. Default at top auto hidden, toggle with ALT-key.">
-        <radiogroup>
-            <radio value="2" label="Autohide" />
-            <radio value="1" label="On" />
-            <radio value="0" label="Off" />
-        </radiogroup>
+    <setting type="menulist"
+             pref="extensions.bottomui.menubarLocation"
+             title="Menu Bar Location"
+             desc="Default hidden at top (toggle with ALT-key).">
+        <menulist>
+            <menupopup>
+                <menuitem value="2" label="Default" />
+                <menuitem value="0" label="Bottom" />
+                <menuitem value="1" label="Top visible" />
+            </menupopup>
+        </menulist>
     </setting>
     <setting type="menulist"
              pref="extensions.bottomui.windowButtonsLocation"
