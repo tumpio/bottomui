@@ -1,6 +1,11 @@
 <?xml version="1.0" ?>
 
 <vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <setting type="bool"
+             pref="extensions.bottomui.tabsOnTop"
+             title="Tabs Above Navigation Toolbar"
+             desc="">
+    </setting>
     <setting type="menulist"
              pref="extensions.bottomui.menubarLocation"
              title="Menu Bar Location"

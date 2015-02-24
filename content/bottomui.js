@@ -30,6 +30,9 @@ function BUI() {
             case "windowButtonsLocation":
                 forAllWindows(fCustomWinButtons);
                 break;
+            case "tabsOnTop":
+                forAllWindows(fTabsOnTop);
+                break;
             }
         }
     );
@@ -103,6 +106,17 @@ function BUI() {
         }
     }
 
+    function fTabsOnTop(window, opt) {
+        let option = (typeof opt !== 'undefined') ? opt : prefmanager.getPref(
+            "tabsOnTop");
+        let tbar = window.document.getElementById("TabsToolbar");
+        if (option) {
+            tbar.setAttribute("tabsontop", true);
+        } else {
+            tbar.setAttribute("tabsontop", false);
+        }
+    }
+
     function fLegacyMenuButton(window, opt) {
         let app_but = window.document.getElementById(
             "appmenu-button-container");
@@ -139,6 +153,7 @@ function BUI() {
         if (!window) return;
         fMenubarLocation(window);
         fCustomWinButtons(window);
+        fTabsOnTop(window);
         if (NOT_AUSTRALIS) {
             fLegacyMenuButton(window, 1);
             fLegacyCustomizeMode(window);
@@ -150,6 +165,7 @@ function BUI() {
         let mwin = window.document.getElementById("main-window");
         fMenubarLocation(window, 0);
         fCustomWinButtons(window, null);
+        fTabsOnTop(window, false);
         if (NOT_AUSTRALIS) {
             fLegacyMenuButton(window, 0);
             if (window.unloadfLegacyCustomizeMode) {

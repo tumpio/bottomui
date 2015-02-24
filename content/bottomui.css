@@ -1,19 +1,16 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @-moz-document url(chrome://browser/content/browser.xul) {
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) .tab-background {
-        -moz-transform: scaleY(-1) !important;
+    #TabsToolbar[tabsontop="false"]:not(.treestyletab-tabbar-toolbar) .tab-background {
+        -moz-transform: scaleY(-1);
     }
-    #navigator-toolbox toolbar:not(#nav-bar):not(#TabsToolbar) {
-        -moz-box-ordinal-group: 1 !important;
+    #navigator-toolbox > toolbar {
+        -moz-box-ordinal-group: 1;
     }
     #nav-bar {
         -moz-box-ordinal-group: 2 !important;
     }
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) {
+    #TabsToolbar[tabsontop="false"]:not(.treestyletab-tabbar-toolbar) {
         -moz-box-ordinal-group: 3 !important;
-    }
-    #TabsToolbar[tabsontop="true"]:not(.treestyletab-tabbar-toolbar) {
-        -moz-box-ordinal-group: 1 !important;
     }
     #navigator-toolbox {
         -moz-box-ordinal-group: 4 !important;
@@ -24,7 +21,7 @@
     #toolbar-menubar {
         -moz-box-ordinal-group: 0 !important;
     }
-    notificationbox:not([dir="reverse"]) .notificationbox-stack {
+    notificationbox:not([dir="reverse"]) > .notificationbox-stack {
         -moz-box-ordinal-group: 2 !important;
     }
     notificationbox:not([dir="reverse"]) .outset {
@@ -62,11 +59,8 @@
     #main-window[sizemode="fullscreen"] #window-controls-bui {
         display: none !important;
     }
-    #nav-bar #window-controls-bui {
+    #window-controls-bui {
         -moz-box-align: start;
-    }
-    #TabsToolbar:not(.treestyletab-tabbar-toolbar) #window-controls-bui {
-        -moz-box-align: end;
     }
     #titlebar-placeholder-on-TabsToolbar-for-captions-buttons {
         display: none!important;
@@ -90,7 +84,7 @@
         border-style: none!important;
     }
     /* vimperator fix */
-    .liberator-floatbox{
+    .liberator-floatbox {
         z-index: 2;
     }
 }
